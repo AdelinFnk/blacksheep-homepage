@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@chakra-ui/react": "^3.8.0",
+    "@emotion/react": "^11.14.0",
+    "next": "^15.1.7",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0"
+  },
+  "name": "blacksheep-cave",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier --write .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Adelin",
+  "license": "MIT",
+  "description": "BlackSheep's Cave",
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "eslint-config-next": "^15.1.7",
+    "prettier": "^3.5.0"
+  }
+}
