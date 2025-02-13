@@ -7,30 +7,37 @@ import {
     Stack,
     Heading,
     Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    IconButton,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from 'react-icons'
+import { Button } from "@chakra-ui/react"
+import {
+    MenuContent,
+    MenuItem,
+    MenuRoot,
+    MenuTrigger,
+} from "@/components/ui/menu"
+import { RxHamburgerMenu } from "react-icons/rx";
 import { useColorMode } from "@/components/ui/color-mode.jsx";
+import Demo from "@/components/toggleColor";
 
-const LinkItem = ({ href, path, children, }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
     const { colorMode } = useColorMode()
     const inactiveColor = colorMode === 'dark' ? 'whiteAlpha.900' : 'gray200'
 
     return (
-        <NextLink href={href}>
-            <Link
-                p={2}
-                bg={active ? 'grassTeal' : undefined}
-                color={active ? '#202023' : inactiveColor}
-            >
-                {children}
-            </Link>
-        </NextLink>
+        <Link
+            as={NextLink}
+            href={href}
+            scroll={false}
+            px={2}
+            py={1}
+            bg={active ? 'grassTeal' : undefined}
+            color={active ? '#202023' : inactiveColor}
+            target={target}
+            {...props}
+        >
+            {children}
+        </Link>
     )
 }
 
@@ -62,6 +69,58 @@ const Navbar = props => {
                             <Logo />
                         </Heading>
                     </Flex>
+
+                    <Stack
+                        direction={{ base: 'column', md: 'row' }}
+                        display={{ base: 'none', md: 'flex' }}
+                        width={{ base: 'full', md: 'auto' }}
+                        alignItems="center"
+                        flexGrow={1}
+                        mt={{ base: 4, md: 0 }}
+                    >
+                        <LinkItem href="/projects" path={path}>
+                            Projects
+                        </LinkItem>
+                        <LinkItem href="/about" path={path}>
+                            About
+                        </LinkItem>
+                        <LinkItem href="/contact" path={path}>
+                            Contact
+                        </LinkItem>
+                    </Stack>
+
+                    <Box flex={1} align="right">
+                        <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                            <MenuRoot>
+                                <MenuTrigger asChild>
+                                    <Button variant="outline" size="sm" aria-label="Options" >
+                                        <RxHamburgerMenu/>
+                                    </Button>
+                                </MenuTrigger>
+                                <MenuContent>
+                                    <MenuItem asChild>
+                                       <Link href="/">
+                                           About
+                                       </Link>
+                                    </MenuItem>
+                                    <MenuItem asChild>
+                                        <Link href="/projects">Projects</Link>
+                                    </MenuItem>
+                                    <MenuItem asChild>
+                                        <Link href="/my-3d-world">My 3D World</Link>
+                                    </MenuItem>
+                                    <MenuItem asChild>
+                                        <Link href="/contact">Contact</Link>
+                                    </MenuItem>
+
+
+                                </MenuContent>
+                            </MenuRoot>
+                        </Box>
+                    </Box>
+
+
+                    <Demo />
                 </Container>
 
 
