@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/menu"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useColorMode } from "@/components/ui/color-mode.jsx";
-import Demo from "@/components/toggleColor";
+import ThemeToggleButton from "@/components/theme-toggle-button";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
@@ -47,6 +47,7 @@ const Navbar = props => {
 
     return (
         <Box
+            justifyItems="space-between"
             position='fixed'
             as='nav'
             w='100%'
@@ -90,6 +91,7 @@ const Navbar = props => {
                     </Stack>
 
                     <Box flex={1} align="right">
+                        <ThemeToggleButton />
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <MenuRoot>
                                 <MenuTrigger asChild>
@@ -120,7 +122,7 @@ const Navbar = props => {
                     </Box>
 
 
-                    <Demo />
+
                 </Container>
 
 

@@ -1,13 +1,13 @@
 import { Provider } from "@/components/ui/provider"
 import Layout from "../components/layout/main"
-import {system} from "@chakra-ui/react/preset";
+import {Theme} from "@/lib/theme";
 
 
 const Website = ({ children, Component, pageProps, router }) => {
     return (
-        <Provider suppressHydrationWarning value={system}>
+        <Provider suppressHydrationWarning value={Theme}>
             {children}
-            <Layout router={router}>
+            <Layout router={router} >
                 <Component {...pageProps} key={router.route} />
             </Layout>
         </Provider>
