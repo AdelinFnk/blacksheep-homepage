@@ -7,7 +7,7 @@ import {ColorModeProvider} from "@/components/ui/color-mode";
 export function Provider(props) {
     return (
         <ChakraProvider value={Theme}>
-            <ColorModeProvider>
+            <ColorModeProvider >
                 {props.children}
             </ColorModeProvider>
         </ChakraProvider>

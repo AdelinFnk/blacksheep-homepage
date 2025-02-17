@@ -11,7 +11,7 @@ export function ColorModeProvider(props) {
     <ThemeProvider attribute='class' disableTransitionOnChange {...props} />
   )
 }
-
+//bg={{ base: "#bbf7d0", _dark: "#1a032e" }}
 export function useColorMode() {
   const { resolvedTheme, setTheme } = useTheme()
   const toggleColorMode = () => {
@@ -52,6 +52,7 @@ export const ColorModeButton = React.forwardRef(
             _icon: {
               width: '7',
               height: '7',
+
 
             },
           }}

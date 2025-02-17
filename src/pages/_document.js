@@ -5,11 +5,11 @@ import { Theme } from "/src/lib/theme"
 export default class Document extends NextDocument {
     render() {
         return (
-            <Html lang="en">
+            <Html lang="en"  >
                 <Head />
                     <body>
                         <ChakraProvider value={Theme}>
-                            <Main />
+                            <Main  />
                         </ChakraProvider>
                         <NextScript />
                     </body>

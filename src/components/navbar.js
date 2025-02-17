@@ -90,8 +90,8 @@ const Navbar = props => {
                         </LinkItem>
                     </Stack>
 
-                    <Box flex={1} align="right">
-                        <ThemeToggleButton />
+                    <Flex flex={1} justifyContent="flex-end" align="center">
+                        <ThemeToggleButton  />
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <MenuRoot>
                                 <MenuTrigger asChild>
@@ -119,7 +119,7 @@ const Navbar = props => {
                                 </MenuContent>
                             </MenuRoot>
                         </Box>
-                    </Box>
+                    </Flex>
 
 
 
