@@ -1,0 +1,32 @@
+import { motion } from 'framer-motion'
+import { chakra, forwardRef} from '@chakra-ui/react'
+import { AnimatePresence } from 'framer-motion'
+
+
+
+const StyledDiv = chakra('div')
+
+const MotionDiv = motion(
+    forwardRef((props, ref) => <StyledDiv ref={ref} {...props} />)
+)
+
+const Section = ({ children, delay = 0 }) => (
+    <AnimatePresence>
+        <MotionDiv
+            variants={{
+                initial: { y: 10, opacity: 0 },
+                animate: { y: 0, opacity: 1 },
+                exit: { y: 10, opacity: 0 },
+            }}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.8, delay }}
+            mb={6}
+        >
+            {children}
+        </MotionDiv>
+    </AnimatePresence>
+)
+
+export default Section

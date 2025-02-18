@@ -1,11 +1,25 @@
-import {Box, Container, Heading, Flex, Image, Center, AbsoluteCenter, Text} from '@chakra-ui/react'
-
+import NextLink from "next/link";
+import {
+    Box,
+    Container,
+    Heading,
+    Flex,
+    Link,
+    Image,
+    Center,
+    Text } from '@chakra-ui/react'
+import { useColorModeValue } from "../components/ui/color-mode.jsx"
+import { TbChevronsRight } from "react-icons/tb";
+import { IoLogoGithub } from "react-icons/io";
+import {Button} from "@chakra-ui/react";
+import { BioSection, BioYear } from "@/components/bio";
+import Section from "@/components/section";
 
 const Page = () => {
     return (
         <Container>
             <Center>
-                <Box borderRadius="lg" bg="red" py={3} px={4} mb={6} >
+                <Box borderRadius="lg" bg={useColorModeValue('#bbf7d0', '#1a032e')} py={3} px={4} mb={6} >
                     Hi, I&apos;m a full-stack developer based in Romania!
                 </Box>
             </Center>
@@ -22,6 +36,75 @@ const Page = () => {
 
                 </Flex>
             </Box>
+
+            <Section delay={0.1}>
+                <Heading as="h3" textStyle="body">
+                    About
+                </Heading>
+
+                <Text>
+                    Warning: creative chaos ahead! I&apos;m a 3D enthusiast and full-stack dev, and I&apos;m brewing up a new project called BlackSheep&apos;s Cave. Here, I&apos;ll be experimenting, learning, and sharing all the things that make me go. I can let my geek flag fly and create whatever the heck I want. No perfectionism allowed, no impostor syndrome tolerated. Just pure, unadulterated creativity and fun. It&apos;s time to get weird and wonderful!
+
+                </Text>
+
+                <Flex align="center" justify="center" my={8}>
+                    <Button
+                        as={NextLink}
+                        href="/projects"
+                        scroll={false}
+                        bg={useColorModeValue('#bbf7d0', '#1a032e')}
+                        color={useColorModeValue('black', 'white')}
+
+                    >
+                        My Portfolio<TbChevronsRight />
+                    </Button>
+                </Flex>
+            </Section>
+
+            <Section delay={0.2}>
+                <Heading as="h3" textStyle="body">
+                    Bio
+                </Heading>
+                <BioSection>
+                    <BioYear>1999</BioYear>
+                    Born in Romania
+                </BioSection>
+
+                <BioSection>
+                    <BioYear>2018</BioYear>
+                    bla bla bla bla bla
+                </BioSection>
+
+                <BioSection>
+                    <BioYear>2025</BioYear>
+                    Working on personal project and developing my skills in different areas of software development and 3D.
+                </BioSection>
+
+            </Section>
+
+            <Section delay={0.3}>
+                <Heading as="h3" textStyle="body">
+                    I🖤
+                </Heading>
+                <Text>Handstands, Running, Training, Solving problems, Slow living, Learning stuff. </Text>
+
+            </Section>
+            <Section delay={0.3}>
+                <Heading as="h3" textStyle="body">
+                    On the www
+                </Heading>
+                <Link href="https://github.com/AdelinFnk" target="_blank" textDecoration="none">
+                    <Button
+                        size="md"
+                        variant="ghost"
+                        fontWeight="bold"
+                        color={useColorModeValue('#1a032e', '#bbf7d0')}
+                    >
+                        <IoLogoGithub /> @AdelinFnk
+                    </Button>
+                </Link>
+            </Section>
+
         </Container>
     )
 }

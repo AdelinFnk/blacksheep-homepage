@@ -1,21 +1,31 @@
 import {
-    useColorMode,
     useColorModeValue,
-    ColorModeIcon,
     ColorModeButton
 } from "@/components/ui/color-mode";
-
-
+import { motion, AnimatePresence } from "framer-motion"
 
 const ThemeToggleButton = () => {
-    const { toggleColorMode } = useColorMode()
 
     const bg = useColorModeValue("#1a032e", "#bbf7d0")
     const color = useColorModeValue("#bbf7d0", "#1a032e")
     return (
-        <ColorModeButton color={color} bg={bg}>
 
-        </ColorModeButton>
+        <AnimatePresence mode='wait' initial={false}>
+            <motion.div
+                variants={{
+                    initial: { display: 'inline-block', y: -20, opacity: 0 },
+                    animate: { display: 'inline-block', y: 0, opacity: 1 },
+                    exit: { display: 'inline-block', y: 20, opacity: 0 },
+                }}
+                key={useColorModeValue('light', 'dark')}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.2 }}
+            >
+                <ColorModeButton color={color} bg={bg} />
+            </motion.div>
+        </AnimatePresence>
     )
 }
 

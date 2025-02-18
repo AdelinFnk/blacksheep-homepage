@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Text, useColorModeValue } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import MyIcon from "@/components/icon";
 import { chakra } from '@chakra-ui/react';
 

@@ -109,9 +109,6 @@ const Navbar = props => {
                                         <Link href="/projects">Projects</Link>
                                     </MenuItem>
                                     <MenuItem asChild>
-                                        <Link href="/my-3d-world">My 3D World</Link>
-                                    </MenuItem>
-                                    <MenuItem asChild>
                                         <Link href="/contact">Contact</Link>
                                     </MenuItem>
 

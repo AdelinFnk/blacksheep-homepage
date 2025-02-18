@@ -4,7 +4,7 @@ import { ClientOnly, IconButton, Skeleton, Span } from '@chakra-ui/react'
 import { ThemeProvider, useTheme } from 'next-themes'
 
 import * as React from 'react'
-import { LuMoon, LuSun, GiMoonClaws, GiStripedSun} from 'react-icons/gi'
+import { GiMoonClaws, GiStripedSun} from 'react-icons/gi'
 
 export function ColorModeProvider(props) {
   return (
