@@ -30,8 +30,8 @@ const customConfig = defineConfig({
             },
 
             fonts: {
-                heading: {value: "Roboto-Mono, sans-serif"},
-                body: {value: "Roboto-Mono, sans-serif"},
+                heading: {value: "'Roboto-Mono', sans-serif"},
+                body: {value: "'Roboto-Mono', sans-serif"},
             },
             colors: {
                 grassTeal: {value: '#bbf7d0'},
