@@ -8,15 +8,17 @@ import {
     Image,
     Center,
     Text } from '@chakra-ui/react'
-import { useColorModeValue } from "../components/ui/color-mode.jsx"
+import { useColorModeValue } from "@/components/ui/color-mode"
 import { TbChevronsRight } from "react-icons/tb";
 import { IoLogoGithub } from "react-icons/io";
 import {Button} from "@chakra-ui/react";
 import { BioSection, BioYear } from "@/components/bio";
 import Section from "@/components/section";
+import Layout from "@/components/layout/article";
 
 const Page = () => {
     return (
+        <Layout>
         <Container>
             <Center>
                 <Box borderRadius="lg" bg={useColorModeValue('#bbf7d0', '#1a032e')} py={3} px={4} mb={6} >
@@ -106,6 +108,7 @@ const Page = () => {
             </Section>
 
         </Container>
+        </Layout>
     )
 }
 
