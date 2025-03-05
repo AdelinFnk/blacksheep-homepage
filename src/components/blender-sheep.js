@@ -27,13 +27,13 @@ const BlenderSheep = () => {
     useEffect(() => {
         const { current: container } = refContainer
         if (container && !renderer) {
-            const scW = container.clientWidth
-            const scH = container.clientHeight
+            const scW = container.clientWidth;
+            const scH = container.clientHeight;
 
             const renderer = new THREE.WebGLRenderer({
                 antialias: true,
                 alpha: true
-            })
+            });
             renderer.setPixelRatio(window.devicePixelRatio)
             renderer.setSize(scW, scH)
             renderer.outputEncoding = THREE.sRGBEncoding
@@ -67,8 +67,9 @@ const BlenderSheep = () => {
                 receiveShadow: false,
                 castShadow: false
             }).then(obj => {
-                setLoading(false)
-            })
+                setLoading(false),
+                    console.log("Model loaded!")
+            }).catch(error => console.error("Error loading model:", error))
 
             let req = null
             let frame = 0
@@ -81,8 +82,8 @@ const BlenderSheep = () => {
                     const p = initialCameraPosition
                     const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
                     camera.position.y = 10
-                    camera.position.x = p.x * Math.cos(rotSpeed)+ p.z * Math.sin(rotSpeed)
-                    camera.position.z = p.z & Math.cos(rotSpeed)- p.x * Math.sin(rotSpeed)
+                    camera.position.x = p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed)
+                    camera.position.z = p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed)
                     camera.lookAt(target)
                 } else {
                     controls.update()
@@ -90,14 +91,18 @@ const BlenderSheep = () => {
 
                 renderer.render(scene, camera)
             }
+
+            animate()
             return () => {
-                cancelAnimationFrame(req)
-                renderer.dispose()
+                cancelAnimationFrame(req);
+                renderer.dispose();
             }
+
 
         }
     }, [initialCameraPosition, renderer, scene, target])
 
+    console.log(refContainer.current?.clientWidth, refContainer.current?.clientHeight);
 
     return (
         <Box ref={refContainer}
