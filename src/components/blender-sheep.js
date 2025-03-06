@@ -63,12 +63,11 @@ const BlenderSheep = () => {
             controls.target = target
             setControls(controls)
 
-            loadGLTFModel(scene, './dog.glb', {
+            loadGLTFModel(scene, './me.glb', {
                 receiveShadow: false,
                 castShadow: false
             }).then(obj => {
-                setLoading(false),
-                    console.log("Model loaded!")
+                setLoading(false)
             }).catch(error => console.error("Error loading model:", error))
 
             let req = null
@@ -100,7 +99,7 @@ const BlenderSheep = () => {
 
 
         }
-    }, [initialCameraPosition, renderer, scene, target])
+    }, [])
 
     console.log(refContainer.current?.clientWidth, refContainer.current?.clientHeight);
 
