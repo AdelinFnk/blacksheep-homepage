@@ -23,6 +23,18 @@ const BlenderSheep = () => {
     )
     const [scene] = useState(new THREE.Scene())
     const [_controls, setControls] = useState()
+
+    const handleResize = useCallback(() => {
+        const { current: container } = refContainer
+        if (container && renderer) {
+            const scW = container.clientWidth
+            const scH = container.clientHeight
+
+            renderer.setSize(scW, scH)
+        }
+
+    }, [renderer])
+
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         const { current: container } = refContainer
@@ -101,13 +113,18 @@ const BlenderSheep = () => {
         }
     }, [])
 
-    console.log(refContainer.current?.clientWidth, refContainer.current?.clientHeight);
+    useEffect(() => {
+        window.addEventListener('resize', handleResize, false)
+        return () => {
+            window.removeEventListener('resize', handleResize, false)
+        }
+    }, [renderer, handleResize])
 
     return (
         <Box ref={refContainer}
              className="blender-sheep"
              m="auto"
-             at={['-20px', '-60px', '-120px']}
+             mt={['-20px', '-60px', '-120px']}
              mb={['-40px', '-140px', '-200px']}
              w={[280, 480, 640]}
              h={[280, 480, 640]}

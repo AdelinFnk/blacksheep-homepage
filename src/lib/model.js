@@ -20,7 +20,7 @@ export function loadGLTFModel(
             glbPath,
             gltf => {
                 const obj = gltf.scene
-                obj.name = 'dog'
+                obj.name = 'sheep'
                 obj.position.y = 0
                 obj.position.x = 0
                 obj.receiveShadow = receiveShadow

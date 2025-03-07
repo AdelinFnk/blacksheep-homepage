@@ -13,7 +13,7 @@ const Projects = () => {
             </Heading>
             <SimpleGrid columns={[1, 1, 2]} gap={6}>
                 <Section>
-                    <ProjectGridItem id="cave" title="BlackSheep's Cave" thumbnail={thumbCave}>
+                    <ProjectGridItem  title="BlackSheep's Cave" thumbnail={thumbCave}>
                         Portfolio website with 3D work.
                     </ProjectGridItem>
                 </Section>
