@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {Box, Container} from "@chakra-ui/react";
 import Navbar from "../navbar.js";
-import BlenderSheep from "@/components/blender-sheep";
+import BlenderSheep from "../blender-sheep";
 import NoSsr from "../no-ssr";
 
 const Main = ({ children, router}) => {

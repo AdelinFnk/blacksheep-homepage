@@ -9,7 +9,7 @@ export default class Document extends NextDocument {
                 <Head />
                     <body>
                         <ChakraProvider value={Theme}>
-                            <Main  />
+                            <Main />
                         </ChakraProvider>
                         <NextScript />
                     </body>

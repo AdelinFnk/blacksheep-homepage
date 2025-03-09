@@ -8,27 +8,34 @@ import {
     Image,
     Center,
     Text } from '@chakra-ui/react'
-import { useColorModeValue } from "@/components/ui/color-mode"
+import { useColorModeValue } from "../components/ui/color-mode"
 import { TbChevronsRight } from "react-icons/tb";
 import { IoLogoGithub } from "react-icons/io";
 import {Button} from "@chakra-ui/react";
-import { BioSection, BioYear } from "@/components/bio";
-import Section from "@/components/section";
-import Layout from "@/components/layout/article";
+import { BioSection, BioYear } from "../components/bio";
+import Section from "../components/section";
+import Layout from "../components/layout/article";
 
 const Page = () => {
     return (
         <Layout>
-        <Container>
+        <Container >
             <Center>
-                <Box borderRadius="lg" bg={useColorModeValue('#bbf7d0', '#1a032e')} py={3} px={4} mb={6} >
+                <Box
+                    borderRadius="lg"
+                    bg={useColorModeValue('#bbf7d0', '#1a032e')}
+                    p={3}
+                    mb={6}
+                    textAlign="center"
+                    css={{ backdropFilter: 'blur(10px)'}}
+                >
                     Hi, I&apos;m a full-stack developer based in Romania!
                 </Box>
             </Center>
 
             <Box display={{md: 'flex'}}>
                 <Box flexGrow={1} >
-                    <Heading as="h2" size="2xl" variant="page-title">
+                    <Heading as="h2">
                         Adelin
                     </Heading>
                     <Text> Craftzman ( Developer / 3D Artist / Learner)</Text>

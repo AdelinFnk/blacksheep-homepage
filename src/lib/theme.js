@@ -18,6 +18,13 @@ const textStyles = defineTextStyles({
 
 const customConfig = defineConfig({
     theme: {
+        layers: {
+            recipes: {
+                container: {
+                    maxW: '2xl', // or any other value you want
+                },
+            },
+        },
         textStyles,
         tokens: {
 

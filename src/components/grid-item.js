@@ -22,7 +22,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
     </Box>
 );
 
-export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
+export const ProjectGridItem = ({ children, category='projects', id, title, thumbnail }) => (
     <Box w="100%" textAlign="center">
         <LinkBox
             as={NextLink}
@@ -53,6 +53,7 @@ export const GridItemStyle = () => (
         styles={`
             .grid-item-thumbnail {
                 border-radius: 12px;
+                
             }
         `}
         />

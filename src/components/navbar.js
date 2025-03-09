@@ -14,10 +14,11 @@ import {
     MenuItem,
     MenuRoot,
     MenuTrigger,
-} from "@/components/ui/menu"
+} from "./ui/menu"
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useColorMode } from "@/components/ui/color-mode.jsx";
-import ThemeToggleButton from "@/components/theme-toggle-button";
+import { useColorMode } from "./ui/color-mode.jsx";
+import ThemeToggleButton from "./theme-toggle-button";
+import {forwardRef} from "react";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
@@ -41,6 +42,11 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     )
 }
 
+// eslint-disable-next-line react/display-name
+const MenuLink = forwardRef((props, ref) => (
+    <Link ref={ref} as={NextLink} {...props} />
+))
+
 const Navbar = props => {
     const { path } = props
     const { colorMode } = useColorMode()
@@ -51,7 +57,7 @@ const Navbar = props => {
             position='fixed'
             as='nav'
             w='100%'
-            bg={colorMode === 'dark' ? '#20202380' : '#ffffff40'}
+
             style={{ backdropFilter: 'blur(10px)' }}
             zIndex={1}
             {...props}
@@ -101,15 +107,19 @@ const Navbar = props => {
                                 </MenuTrigger>
                                 <MenuContent>
                                     <MenuItem asChild>
-                                       <Link href="/">
+                                       <Link as = {MenuLink} href="/">
                                            About
                                        </Link>
                                     </MenuItem>
                                     <MenuItem asChild>
-                                        <Link href="/projects">Projects</Link>
+                                        <Link as={MenuLink} href="/projects">
+                                            Projects
+                                        </Link>
                                     </MenuItem>
                                     <MenuItem asChild>
-                                        <Link href="/contact">Contact</Link>
+                                        <Link as={MenuLink} href="/contact">
+                                            Contact
+                                        </Link>
                                     </MenuItem>
 
 

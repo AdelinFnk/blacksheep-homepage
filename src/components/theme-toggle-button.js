@@ -1,7 +1,7 @@
 import {
     useColorModeValue,
     ColorModeButton
-} from "@/components/ui/color-mode";
+} from "./ui/color-mode";
 import { motion, AnimatePresence } from "framer-motion"
 
 const ThemeToggleButton = () => {

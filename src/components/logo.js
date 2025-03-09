@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Text } from '@chakra-ui/react'
-import MyIcon from "@/components/icon";
+import MyIcon from "../components/icon";
 import { chakra } from '@chakra-ui/react';
 
 const LogoBox = ({ children }) => (

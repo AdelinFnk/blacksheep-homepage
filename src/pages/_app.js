@@ -1,13 +1,12 @@
-import { Provider } from "@/components/ui/provider"
-import Layout from "@/components/layout/main"
-import {Theme} from "@/lib/theme";
-import Fonts from "@/components/fonts";
+import { Provider } from "../components/ui/provider"
+import Layout from "../components/layout/main"
+import Fonts from "../components/fonts";
 import { AnimatePresence } from "framer-motion"
 
 
 const Website = ({ children, Component, pageProps, router }) => {
     return (
-        <Provider suppressHydrationWarning value={Theme}>
+        <Provider>
             {children}
             <Fonts />
             <Layout router={router} >

@@ -4,6 +4,8 @@ export const BioSection = (props) => (
     <Box
         css={{
             display: "flex",
+
+
         }}
         {...props}
     />
