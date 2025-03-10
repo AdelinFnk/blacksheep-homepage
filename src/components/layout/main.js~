@@ -14,7 +14,7 @@ const Main = ({ children, router}) => {
 
             <Navbar path={router.asPath} />
 
-            <Container maxWidth="2xl" pt={14}>
+            <Container maxWidth="md" pt={14}>
                 <NoSsr>
                     <BlenderSheep />
                 </NoSsr>

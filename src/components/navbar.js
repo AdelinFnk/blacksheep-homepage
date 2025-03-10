@@ -62,11 +62,11 @@ const Navbar = props => {
             zIndex={1}
             {...props}
         >
-            <Container>
+
                 <Container
                     display="flex"
                     p={2}
-                    maxW="container.md"
+                    maxW="2xl"
                     wrap="wrap"
                     align="center"
                     justify="space-between"
@@ -88,7 +88,7 @@ const Navbar = props => {
                         <LinkItem href="/projects" path={path}>
                             Projects
                         </LinkItem>
-                        <LinkItem href="/about" path={path}>
+                        <LinkItem href="/" path={path}>
                             About
                         </LinkItem>
                         <LinkItem href="/contact" path={path}>
@@ -101,13 +101,18 @@ const Navbar = props => {
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <MenuRoot>
                                 <MenuTrigger asChild>
-                                    <Button variant="outline" size="sm" aria-label="Options" >
+                                    <Button variant="outline"
+                                            size="sm"
+                                            aria-label="Options"
+                                            colorPalette="teal"
+
+                                    >
                                         <RxHamburgerMenu/>
                                     </Button>
                                 </MenuTrigger>
-                                <MenuContent>
+                                <MenuContent colorPalette="teal">
                                     <MenuItem asChild>
-                                       <Link as = {MenuLink} href="/">
+                                       <Link as={MenuLink} href="/">
                                            About
                                        </Link>
                                     </MenuItem>
@@ -127,13 +132,7 @@ const Navbar = props => {
                             </MenuRoot>
                         </Box>
                     </Flex>
-
-
-
                 </Container>
-
-
-            </Container>
         </Box>
     )
 }

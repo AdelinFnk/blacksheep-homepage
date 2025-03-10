@@ -19,7 +19,7 @@ import Layout from "../components/layout/article";
 const Page = () => {
     return (
         <Layout>
-        <Container >
+        <Container>
             <Center>
                 <Box
                     borderRadius="lg"
