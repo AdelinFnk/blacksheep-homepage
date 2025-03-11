@@ -1,11 +1,14 @@
 import {
     useColorModeValue,
-    ColorModeButton
+    ColorModeButton,
+    DarkMode,
+    LightMode,
+    useColorMode,
 } from "./ui/color-mode";
 import { motion, AnimatePresence } from "framer-motion"
 
 const ThemeToggleButton = () => {
-
+    
     const bg = useColorModeValue("#1a032e", "#bbf7d0")
     const color = useColorModeValue("#bbf7d0", "#1a032e")
     return (

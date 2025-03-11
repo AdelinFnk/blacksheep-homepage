@@ -71,7 +71,7 @@ export const LightMode = React.forwardRef(function LightMode(props, ref) {
       display='contents'
       className='chakra-theme light'
       colorPalette='gray'
-      colorScheme='light'
+      colorScheme='teal'
       ref={ref}
       {...props}
     />

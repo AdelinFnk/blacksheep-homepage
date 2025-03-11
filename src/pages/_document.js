@@ -8,9 +8,7 @@ export default class Document extends NextDocument {
             <Html lang="en"  >
                 <Head />
                     <body>
-                        <ChakraProvider value={Theme}>
-                            <Main />
-                        </ChakraProvider>
+                        <Main />
                         <NextScript />
                     </body>
             </Html>
