@@ -4,6 +4,7 @@ import Fonts from "../components/fonts";
 import { AnimatePresence } from "framer-motion"
 
 
+
 const Website = ({ children, Component, pageProps, router }) => {
     return (
         <Provider>

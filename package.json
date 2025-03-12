@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@chakra-ui/react": "^3.8.0",
+    "@chakra-ui/theme": "^3.4.6",
     "@chakra-ui/theme-tools": "^2.2.6",
     "@emotion/react": "^11.14.0",
     "framer-motion": "^12.4.3",
@@ -24,6 +25,7 @@
   "license": "MIT",
   "description": "BlackSheep's Cave",
   "devDependencies": {
+    "@chakra-ui/cli": "^2.4.1",
     "eslint": "^9.20.1",
     "eslint-config-next": "^15.1.7",
     "prettier": "^3.5.0"

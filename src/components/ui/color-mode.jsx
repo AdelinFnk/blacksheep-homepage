@@ -1,6 +1,6 @@
 'use client'
 
-import { ClientOnly, IconButton, Skeleton, Span } from '@chakra-ui/react'
+import {ClientOnly, IconButton, Skeleton, Span, useToken} from '@chakra-ui/react'
 import { ThemeProvider, useTheme } from 'next-themes'
 
 import * as React from 'react'
@@ -36,9 +36,10 @@ export function ColorModeIcon() {
 
 export const ColorModeButton = React.forwardRef(
   function ColorModeButton(props, ref) {
-        const { toggleColorMode } = useColorMode()
 
-    return (
+      const { toggleColorMode } = useColorMode()
+
+      return (
       <ClientOnly fallback={<Skeleton boxSize='8' />}>
         <IconButton
 
@@ -52,8 +53,6 @@ export const ColorModeButton = React.forwardRef(
             _icon: {
               width: '7',
               height: '7',
-
-
             },
           }}
         >

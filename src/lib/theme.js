@@ -1,6 +1,15 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
 
+
 const customConfig = defineConfig({
+    globalCss: {
+        body: {
+            backgroundColor: {
+                light: "gray.100",
+                dark: "red",
+            },
+        },
+    },
     theme: {
         textStyles: {
             body: {
@@ -20,10 +29,11 @@ const customConfig = defineConfig({
                 heading: {value: "'Roboto-Mono', sans-serif"},
                 body: {value: "'Roboto-Mono', sans-serif"},
             },
-            colors: {
+            colors:{
                 grassTeal: {value: '#bbf7d0'},
             },
-        }
+        },
+
     },
 })
 

@@ -96,9 +96,9 @@ const Navbar = props => {
                         </LinkItem>
                     </Stack>
 
-                    <Flex flex={1} justifyContent="flex-end" align="center">
+                    <Flex flex={1} justifyContent="flex-end" align="center" >
                         <ThemeToggleButton  />
-                        <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                        <Box  ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <MenuRoot>
                                 <MenuTrigger asChild>
                                     <Button variant="outline"

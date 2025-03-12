@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const ThemeToggleButton = () => {
 
-    const bg = useColorModeValue("#1a032e", "#bbf7d0")
-    const color = useColorModeValue("#bbf7d0", "#1a032e")
+
 
     return (
 
@@ -24,7 +23,7 @@ const ThemeToggleButton = () => {
                 exit="exit"
                 transition={{ duration: 0.2 }}
             >
-                <ColorModeButton color={color} bg={bg} />
+                <ColorModeButton  />
             </motion.div>
         </AnimatePresence>
     )
