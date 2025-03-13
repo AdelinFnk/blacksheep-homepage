@@ -2,14 +2,6 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
 
 
 const customConfig = defineConfig({
-    globalCss: {
-        body: {
-            backgroundColor: {
-                light: "gray.100",
-                dark: "red",
-            },
-        },
-    },
     theme: {
         textStyles: {
             body: {
@@ -21,6 +13,15 @@ const customConfig = defineConfig({
                     textDecorationThickness: "4px",
                     marginTop: "3",
                     marginBottom: "4",
+                },
+            },
+        },
+        semanticTokens: {
+            colors: {
+                bg: {
+                    DEFAULT: {
+                        value: { _light: "#bbf7d0", _dark: "#9b1c1c" }, // Custom dark background
+                    },
                 },
             },
         },
@@ -37,4 +38,4 @@ const customConfig = defineConfig({
     },
 })
 
-export const Theme = createSystem(defaultConfig, customConfig)
+export const theme = createSystem(defaultConfig, customConfig)

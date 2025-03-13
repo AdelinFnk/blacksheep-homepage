@@ -12,6 +12,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
                 alt={title}
                 className="grid-item-thumbnail"
                 placeholder="blur"
+                loading="lazy"
 
             />
             <LinkOverlay href={href} target="_blank">
@@ -26,7 +27,7 @@ export const ProjectGridItem = ({ children, category='projects', id, title, thum
     <Box w="100%" textAlign="center">
         <LinkBox
             as={NextLink}
-            href={`/projects/${id}`}
+            href={`/${category}/${id}`}
             scroll={false}
             cursor="pointer"
             >
@@ -37,7 +38,7 @@ export const ProjectGridItem = ({ children, category='projects', id, title, thum
                     className="grid-item-thumbnail"
                     placeholder="blur"
                 />
-                <LinkOverlay asChild href={`/projects/${id}`}>
+                <LinkOverlay asChild href={`/${category}/${id}`}>
                     <Text mt={2} fontSize={20}>
                         {title}
                     </Text>

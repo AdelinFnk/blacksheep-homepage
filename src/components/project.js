@@ -4,7 +4,7 @@ import { TiChevronRight } from "react-icons/ti";
 
 export const Title = ({ children }) => (
     <Box>
-        <NextLink href="/projects" passHref>
+        <NextLink href="/projects">
             <Link>Projects</Link>
         </NextLink>
 

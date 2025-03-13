@@ -1,8 +1,8 @@
 import { Container, Heading, SimpleGrid }  from '@chakra-ui/react'
 import Section from '../components/section'
-import { ProjectGridItem } from '../components/grid-item'
+import { ProjectGridItem } from '@/components/grid-item'
 import Layout from "../components/layout/article";
-import thumbCave from '/public/images/thumbnailcave.png'
+import thumbCave from '../../public/images/thumbnailcave.png'
 
 const Projects = () => {
     return (
@@ -13,12 +13,12 @@ const Projects = () => {
             </Heading>
             <SimpleGrid columns={[1, 1, 2]} gap={6}>
                 <Section>
-                    <ProjectGridItem  title="BlackSheep's Cave" thumbnail={thumbCave}>
+                    <ProjectGridItem id="cave" title="BlackSheep's Cave" thumbnail={thumbCave}>
                         Portfolio website with 3D work.
                     </ProjectGridItem>
                 </Section>
             </SimpleGrid>
-            </Container>
+        </Container>
         </Layout>
     )
 }
