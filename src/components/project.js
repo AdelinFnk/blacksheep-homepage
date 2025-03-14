@@ -1,13 +1,10 @@
 import NextLink from "next/link";
-import { Heading, Box, Image, Link, Badge } from "@chakra-ui/react";
+import { Heading, Box, Image, Badge } from "@chakra-ui/react";
 import { TiChevronRight } from "react-icons/ti";
 
 export const Title = ({ children }) => (
     <Box>
-        <NextLink href="/projects">
-            <Link>Projects</Link>
-        </NextLink>
-
+            <NextLink href="/projects">Projects</NextLink>
         <span>
             &nbsp;
             <TiChevronRight />

@@ -12,15 +12,15 @@ const Project = () =>
                     Cave <Badge>2025</Badge>
                 </Title>
 
-                <List ml={4} my={4}>
-                    <ListItem>
+                <List.Root ml={4} my={4}>
+                    <List.Item>
                         <Meta>Website</Meta>
                         <Link href="/">
                             Cave <HiExternalLink mx="2px"/>
                         </Link>
-                    </ListItem>
+                    </List.Item>
 
-                </List>
+                </List.Root>
             </Container>
         </Layout>
     )
