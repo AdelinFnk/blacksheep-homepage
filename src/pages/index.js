@@ -8,11 +8,11 @@ import {
     Image,
     Center,
     Text } from '@chakra-ui/react'
-import { useColorModeValue } from "../components/ui/color-mode"
+
 import { TbChevronsRight } from "react-icons/tb";
 import { IoLogoGithub } from "react-icons/io";
 import {Button} from "@chakra-ui/react";
-import { BioSection, BioYear } from "../components/bio";
+import { BioSection, BioYear } from "@/components/bio";
 import Section from "../components/section";
 import Layout from "../components/layout/article";
 
@@ -23,7 +23,7 @@ const Page = () => {
             <Center>
                 <Box
                     borderRadius="lg"
-                    bg={useColorModeValue('#bbf7d0', '#1a032e')}
+                    bg="bg.element"
                     p={3}
                     mb={6}
                     textAlign="center"
@@ -38,7 +38,7 @@ const Page = () => {
                     <Heading as="h2">
                         Adelin
                     </Heading>
-                    <Text> Craftzman ( Developer / 3D Artist / Learner)</Text>
+                    <Text> Craftzman ( Developer / 3D Creator / Learner)</Text>
                 </Box>
                 <Flex  flexShrink={0} mt={{base: 6, md: 0}} ml={{md: 6}} justifyContent="center" align="center">
                     <Image borderColor="blackAlpha.800" borderWidth={3} borderStyle="ridge" maxWidth="100px" display="inline-block" borderRadius="full" src="../images/shadow.webp" alt="Profil Image"/>
@@ -61,9 +61,8 @@ const Page = () => {
                         as={NextLink}
                         href="/projects"
                         scroll={false}
-                        bg={useColorModeValue('#bbf7d0', '#1a032e')}
-                        color={useColorModeValue('black', 'white')}
-
+                        bg="bg.element"
+                        color="fg.element"
                     >
                         My Portfolio<TbChevronsRight />
                     </Button>
@@ -79,15 +78,10 @@ const Page = () => {
                     Born in Romania
                 </BioSection>
 
-                <BioSection>
-                    <BioYear>2018</BioYear>
-                    bla bla bla bla bla
-                </BioSection>
 
                 <BioSection>
                     <BioYear>2025</BioYear>
-                    Working on personal project and developing my skills in different areas of software development and 3D.
-                </BioSection>
+                    I am working on personal projects and developing my skills in various areas of software engineering and 3D modeling.                </BioSection>
 
             </Section>
 
@@ -95,7 +89,7 @@ const Page = () => {
                 <Heading as="h3" textStyle="body">
                     I🖤
                 </Heading>
-                <Text>Handstands, Running, Training, Solving problems, Slow living, Learning stuff. </Text>
+                <Text>Handstands, Running, Training, Solving problems, Slow living, Learning. </Text>
 
             </Section>
             <Section delay={0.3}>
@@ -107,7 +101,8 @@ const Page = () => {
                         size="md"
                         variant="ghost"
                         fontWeight="bold"
-                        color={useColorModeValue('#1a032e', '#bbf7d0')}
+                        color="bg.link"
+                        colorPalette="brand"
                     >
                         <IoLogoGithub /> @AdelinFnk
                     </Button>

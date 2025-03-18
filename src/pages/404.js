@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { Flex, Heading, Container, Button, Text } from "@chakra-ui/react";
-import {useColorModeValue} from "../components/ui/color-mode";
+
 
 const NotFound = () => {
     return(
@@ -13,8 +13,8 @@ const NotFound = () => {
                 <Button
                     as={NextLink}
                     href="/"
-                    bg={useColorModeValue('#bbf7d0', '#1a032e')}
-                    color={useColorModeValue('black', 'white')}
+                    bg="bg.element"
+                    color="fg.element"
                 >
                     Go to the homepage
                 </Button>

@@ -32,7 +32,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
             scroll={false}
             px={2}
             py={1}
-            bg={active ? 'grassTeal' : undefined}
+            bg={active ? 'brand.linkColor' : undefined}
             color={active ? '#202023' : inactiveColor}
             target={target}
             {...props}
@@ -58,7 +58,6 @@ const Navbar = props => {
             position='fixed'
             as='nav'
             w='100%'
-
             style={{ backdropFilter: 'blur(10px)' }}
             zIndex={1}
             {...props}
@@ -86,11 +85,11 @@ const Navbar = props => {
                         flexGrow={1}
                         mt={{ base: 4, md: 0 }}
                     >
-                        <LinkItem href="/projects" path={path}>
-                            Projects
-                        </LinkItem>
                         <LinkItem href="/" path={path}>
                             About
+                        </LinkItem>
+                        <LinkItem href="/projects" path={path}>
+                            Projects
                         </LinkItem>
                         <LinkItem href="/contact" path={path}>
                             Contact
@@ -98,23 +97,26 @@ const Navbar = props => {
                     </Stack>
 
                     <Flex flex={1} justifyContent="flex-end" align="center" >
+
                         <ThemeToggleButton  />
+
                         <Box  ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <MenuRoot>
                                 <MenuTrigger asChild>
-                                    <Button variant="outline"
-                                            size="sm"
-                                            aria-label="Options"
-                                            colorPalette="teal"
-
+                                    <Button
+                                        variant="subtle"
+                                        size="sm"
+                                        aria-label="Options"
+                                        colorPalette="brand"
                                     >
-                                        <RxHamburgerMenu/>
+                                        <RxHamburgerMenu  />
                                     </Button>
                                 </MenuTrigger>
-                                <MenuContent colorPalette="teal">
+
+                                <MenuContent>
                                     <MenuItem asChild>
-                                       <Link as={MenuLink} href="/">
-                                           About
+                                       <Link as={MenuLink} href="/blog">
+                                           Blog
                                        </Link>
                                     </MenuItem>
                                     <MenuItem asChild>
@@ -127,8 +129,6 @@ const Navbar = props => {
                                             Contact
                                         </Link>
                                     </MenuItem>
-
-
                                 </MenuContent>
                             </MenuRoot>
                         </Box>
