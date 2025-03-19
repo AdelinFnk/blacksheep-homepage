@@ -1,7 +1,7 @@
-import { Container, Badge, Link, List, ListItem} from '@chakra-ui/react'
+import { Container, Badge, Link } from '@chakra-ui/react'
 import { HiExternalLink } from "react-icons/hi";
 import { Title, Meta } from '@/components/project'
-
+import{ List } from '@chakra-ui/react'
 import Layout from '../../components/layout/article'
 
 const Project = () =>

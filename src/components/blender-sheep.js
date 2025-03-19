@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import {useState, useEffect, useRef, useCallback, useMemo} from 'react'
 import { Box, Spinner } from '@chakra-ui/react'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from "@/lib/model";
+import {OrbitControls} from "three/addons";
 
 
 function easeOutCirc(x) {
@@ -22,7 +22,7 @@ const BlenderSheep = () => {
             20 * Math.cos(0.2 * Math.PI)
         )
     )
-    const [scene] = useState(new THREE.Scene())
+    const scene = useMemo(() => new THREE.Scene(), [])
     const [_controls, setControls] = useState()
 
     const handleResize = useCallback(() => {
@@ -79,7 +79,7 @@ const BlenderSheep = () => {
             loadGLTFModel(scene, 'me.glb', {
                 receiveShadow: false,
                 castShadow: false
-            }).then(obj => {
+            }).then(() => {
                 setLoading(false)
             }).catch(error => console.error("Error loading model:", error))
 

@@ -50,7 +50,6 @@ const MenuLink = forwardRef((props, ref) => (
 
 const Navbar = props => {
     const { path } = props
-    const { colorMode } = useColorMode()
 
     return (
         <Box
