@@ -3,8 +3,8 @@ import { Heading, Box, Image, Badge } from "@chakra-ui/react";
 import { TiChevronRight } from "react-icons/ti";
 
 export const Title = ({ children }) => (
-    <Box>
-            <NextLink href="/projects">Projects</NextLink>
+    <Box display="ruby">
+        <NextLink href="/projects">Projects</NextLink>
         <span>
             &nbsp;
             <TiChevronRight />
@@ -18,11 +18,11 @@ export const Title = ({ children }) => (
 )
 
 export const ProjectImage = ({ src, alt }) => (
-    <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+    <Image borderRadius="xl" w="full" src={src} alt={alt} mb={4} />
 )
 
 export const Meta = ({ children }) => (
-    <Badge colorScheme="green" mr={2}>
+    <Badge colorPalette="green" mr={2}>
         {children}
     </Badge>
 )

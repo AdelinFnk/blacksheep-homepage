@@ -23,6 +23,7 @@ const Page = () => {
             <Center>
                 <Box
                     borderRadius="lg"
+                    color="fg.element"
                     bg="bg.element"
                     p={3}
                     mb={6}
@@ -56,13 +57,14 @@ const Page = () => {
 
                 </Text>
 
-                <Flex align="center" justify="center" my={8}>
+                <Flex align="center" justify="center" my={8} >
                     <Button
                         as={NextLink}
                         href="/projects"
                         scroll={false}
                         bg="bg.element"
                         color="fg.element"
+                        _hover={{ bg: "#a98467" }}
                     >
                         My Portfolio<TbChevronsRight />
                     </Button>

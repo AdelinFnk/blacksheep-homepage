@@ -36,7 +36,7 @@ export const ProjectGridItem = ({ children, category='projects', id, title, thum
                     src={thumbnail}
                     alt={title}
                     className="grid-item-thumbnail"
-                    placeholder="blur"
+
                 />
                 <LinkOverlay asChild href={`/${category}/${id}`}>
                     <Text mt={2} fontSize={20}>

@@ -9,7 +9,7 @@ const customConfig = defineConfig({
                     textDecoration: "underline",
                     fontSize: "20px",
                     textUnderlineOffset: "8px",
-                    textDecorationColor: {_light: "#1a032e", _dark: "#baf5ce"},
+                    textDecorationColor: {_light: "#a98467", _dark: "#adc178"},
                     textDecorationThickness: "4px",
                     marginTop: "3",
                     marginBottom: "4",
@@ -20,24 +20,35 @@ const customConfig = defineConfig({
             colors: {
                 brand: {
                     subtle: {
-                        value: {_light: "#bbf7d0", _dark: "#1a032e"}
+                        value: {_light: "#a98467", _dark: "#adc178"}
                     },
-                    linkColor: {value: '#bbf7d0'}
+                    linkNavBg: {
+                        value: {_light: "#6c584c", _dark: "#f0ead2"}
+                    },
+                    linkNavText: {
+                        value: {_light: "#f0ead2", _dark: "#6c584c"}
+                    },
+                    linkNavInactive: {
+                        value: {_light: "#6c584c", _dark: "#f0ead2"}
+                    },
                 },
                 bg: {
                     DEFAULT: {
-                        value: {_light: "#fce5d8", _dark: "#564260"}, // Custom dark background
+                        value: {_light: "#dde5b6", _dark: "#6c584c"}, // Custom dark background
                     },
                     element: {
-                        value: {_light: "#bbf7d0", _dark: "#1a032e"},
+                        value: {_light: "#6c584c", _dark: "#f0ead2"},
                     },
                     link: {
-                        value: {_light: "#1a032e", _dark: "#bbf7d0"},
+                        value: {_light: "#6c584c", _dark: "#f0ead2"},
                     },
                 },
                 fg: {
+                    DEFAULT: {
+                        value: {_light: "#6c584c", _dark: "#f0ead2"}, // Custom dark text color
+                    },
                     element: {
-                        value: {_light: "{colors.black}", _dark: "{colors.whiteAlpha.900}"}, // Custom dark text color
+                        value: {_light: "#f0ead2", _dark: "#6c584c"}, // Custom dark text color
                     },
                 },
             },

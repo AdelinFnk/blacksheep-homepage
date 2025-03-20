@@ -1,4 +1,4 @@
-import { Provider } from "../components/ui/provider"
+import { Provider } from "@/components/ui/provider"
 import Layout from "../components/layout/main"
 import Fonts from "../components/fonts";
 import { AnimatePresence } from "framer-motion"

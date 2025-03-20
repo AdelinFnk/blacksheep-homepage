@@ -2,7 +2,7 @@ import { Container, Heading, SimpleGrid }  from '@chakra-ui/react'
 import Section from '../components/section'
 import { ProjectGridItem } from '@/components/grid-item'
 import Layout from "../components/layout/article";
-
+import project1 from '../../public/images/mor.png'
 
 const Projects = () => {
     return (
@@ -13,7 +13,7 @@ const Projects = () => {
             </Heading>
             <SimpleGrid columns={[1, 1, 2]} gap={6}>
                 <Section>
-                    <ProjectGridItem id="cave" title="BlackSheep's Cave">
+                    <ProjectGridItem id="cave" title="BlackSheep's Cave" thumbnail={project1}>
                         Portfolio website with 3D work.
                     </ProjectGridItem>
                 </Section>
