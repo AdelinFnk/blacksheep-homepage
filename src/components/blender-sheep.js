@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef, useCallback, useMemo} from 'react'
+import {useState, useEffect, useRef, useCallback } from 'react'
 import { Box, Spinner } from '@chakra-ui/react'
 import * as THREE from 'three'
 import { loadGLTFModel } from "@/lib/model";
@@ -9,23 +9,15 @@ function easeOutCirc(x) {
         return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
+
 const BlenderSheep = () => {
     const refContainer = useRef()
     const [loading, setLoading] = useState(true)
-    const [renderer, setRenderer] = useState()
-    const [_camera, setCamera] = useState()
-    const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
-    const [initialCameraPosition] = useState(
-        new THREE.Vector3(
-            20 * Math.sin(0.2 * Math.PI),
-            10,
-            20 * Math.cos(0.2 * Math.PI)
-        )
-    )
-    const scene = useMemo(() => new THREE.Scene(), [])
-    const [_controls, setControls] = useState()
+    const refRenderer = useRef()
+
 
     const handleResize = useCallback(() => {
+        const { current: renderer } = refRenderer
         const { current: container } = refContainer
         if (container && renderer) {
             const scW = container.clientWidth
@@ -34,12 +26,13 @@ const BlenderSheep = () => {
             renderer.setSize(scW, scH)
         }
 
-    }, [renderer])
+    }, [])
+
 
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         const { current: container } = refContainer
-        if (container && !renderer) {
+        if (container) {
             const scW = container.clientWidth;
             const scH = container.clientHeight;
 
@@ -51,7 +44,15 @@ const BlenderSheep = () => {
             renderer.setSize(scW, scH)
             renderer.outputEncoding = THREE.sRGBEncoding
             container.appendChild(renderer.domElement)
-            setRenderer(renderer)
+            refRenderer.current = renderer
+            const scene =new THREE.Scene()
+
+            const target = new THREE.Vector3(-0.5, 1.2, 0)
+            const initialCameraPosition = new THREE.Vector3(
+                    20 * Math.sin(0.2 * Math.PI),
+                    10,
+                    20 * Math.cos(0.2 * Math.PI)
+                )
 
             // 640 -> 240
             // 8   -> 6
@@ -66,20 +67,19 @@ const BlenderSheep = () => {
             )
             camera.position.copy(initialCameraPosition)
             camera.lookAt(target)
-            setCamera(camera)
 
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+            const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI)
             scene.add(ambientLight)
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
             controls.target = target
-            setControls(controls)
 
             loadGLTFModel(scene, 'me.glb', {
                 receiveShadow: false,
                 castShadow: false
             }).then(() => {
+                animate()
                 setLoading(false)
             }).catch(error => console.error("Error loading model:", error))
 
@@ -104,22 +104,25 @@ const BlenderSheep = () => {
                 renderer.render(scene, camera)
             }
 
-            animate()
+
             return () => {
                 cancelAnimationFrame(req);
+                renderer.domElement.remove()
                 renderer.dispose();
             }
 
 
         }
-    }, [scene])
+    }, [])
+
+
 
     useEffect(() => {
         window.addEventListener('resize', handleResize, false)
         return () => {
             window.removeEventListener('resize', handleResize, false)
         }
-    }, [renderer, handleResize])
+    }, [handleResize])
 
     return (
         <Box ref={refContainer}

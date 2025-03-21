@@ -3,6 +3,7 @@ import {Box, Container} from "@chakra-ui/react";
 import Navbar from "../navbar.js";
 import BlenderSheep from "../blender-sheep";
 import NoSsr from "../no-ssr";
+import Footer from "@/components/footer";
 
 const Main = ({ children, router}) => {
     return (
@@ -19,6 +20,7 @@ const Main = ({ children, router}) => {
                     <BlenderSheep />
                 </NoSsr>
                 {children}
+                <Footer />
             </Container>
         </Box>
     )
